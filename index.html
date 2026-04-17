@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selector de Participación — Marketing Internacional 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #070b17;
+  --surface: rgba(255,255,255,0.035);
+  --surface2: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --gold: #e8b84b;
+  --gold-dim: rgba(232,184,75,0.12);
+  --gold-glow: rgba(232,184,75,0.25);
+  --blue: #4d9fff;
+  --green: #52d48a;
+  --purple: #a87fff;
+  --text: #ddd8cc;
+  --text-dim: rgba(221,216,204,0.45);
+  --text-mid: rgba(221,216,204,0.7);
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+/* ── Background atmosphere ── */
+.bg-grid {
+  position: fixed; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(232,184,75,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,184,75,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.bg-orb {
+  position: fixed; pointer-events: none; border-radius: 50%;
+}
+.bg-orb-1 {
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(77,159,255,0.05) 0%, transparent 65%);
+  top: -300px; right: -250px;
+}
+.bg-orb-2 {
+  width: 550px; height: 550px;
+  background: radial-gradient(circle, rgba(232,184,75,0.06) 0%, transparent 65%);
+  bottom: -200px; left: -200px;
+}
+
+/* ── Header ── */
+header {
+  position: sticky; top: 0; left: 0; right: 0; width: 100%;
+  padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7,11,23,0.85);
+  backdrop-filter: blur(16px);
+  z-index: 200;
+}
+.hdr-left { display: flex; flex-direction: column; gap: 2px; }
+.hdr-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.92rem; color: var(--gold); letter-spacing: 0.04em;
+}
+.hdr-sub {
+  font-size: 0.72rem; color: var(--text-dim);
+  letter-spacing: 0.09em; text-transform: uppercase;
+}
+.badge {
+  background: var(--gold-dim);
+  border: 1px solid rgba(232,184,75,0.28);
+  color: var(--gold);
+  font-size: 0.7rem; font-weight: 600;
+  padding: 4px 12px; border-radius: 100px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Main wrapper ── */
+.main {
+  width: 100%; max-width: 660px;
+  padding: 56px 24px 60px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 28px;
+  position: relative; z-index: 10;
+}
+
+/* ── Phase system ── */
+.phase { display: none; width: 100%; flex-direction: column; align-items: center; gap: 24px; }
+.phase.active { display: flex; animation: phaseIn 0.45s cubic-bezier(0.22,1,0.36,1); }
+@keyframes phaseIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Phase 1: Welcome ── */
+.hero-eyebrow {
+  font-size: 0.72rem; color: var(--text-dim);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--border2);
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 900; line-height: 1.1; text-align: center;
+  letter-spacing: -0.01em;
+}
+.hero-title .accent { color: var(--gold); }
+.hero-desc {
+  font-size: 0.88rem; color: var(--text-dim);
+  text-align: center; max-width: 360px; line-height: 1.6;
+}
+
+/* Big CTA button */
+.cta-wrap { position: relative; margin-top: 8px; }
+.cta-btn {
+  position: relative;
+  background: var(--gold);
+  color: #100d04;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.22rem; font-weight: 700;
+  padding: 20px 60px;
+  border: none; border-radius: 6px;
+  cursor: pointer; outline: none;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 0 rgba(232,184,75,0), 0 6px 28px rgba(232,184,75,0.18);
+  letter-spacing: 0.01em; display: block;
+}
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 50px rgba(232,184,75,0.28), 0 10px 40px rgba(232,184,75,0.2);
+}
+.cta-btn:active { transform: translateY(-1px); }
+.cta-ring {
+  position: absolute; inset: -5px;
+  border: 1px solid rgba(232,184,75,0.35);
+  border-radius: 9px;
+  animation: ring-pulse 2.2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes ring-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%       { opacity: 0.8;  transform: scale(1.025); }
+}
+
+/* Brand index preview */
+.brand-preview {
+  margin-top: 8px; width: 100%;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 20px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.bp-title { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.bp-row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.8rem;
+}
+.bp-num { color: var(--gold); font-weight: 600; font-size: 0.72rem; width: 22px; text-align: right; }
+.bp-brand { color: var(--text-mid); flex: 1; }
+.bp-student { color: var(--text-dim); font-size: 0.72rem; text-align: right; }
+
+/* ── Phase 2: Slot machine ── */
+.slot-shell {
+  width: 100%; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 14px;
+  padding: 36px 32px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.slot-shell::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: scan 2s ease-in-out infinite;
+}
+@keyframes scan {
+  0%   { opacity: 0.3; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+.slot-label {
+  font-size: 0.7rem; color: var(--text-dim);
+  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px;
+}
+.slot-window {
+  min-height: 72px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+/* Fade masks top/bottom */
+.slot-window::before, .slot-window::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 20px; z-index: 2;
+  pointer-events: none;
+}
+.slot-window::before { top: 0; background: linear-gradient(to bottom, var(--bg), transparent); }
+.slot-window::after  { bottom: 0; background: linear-gradient(to top, var(--bg), transparent); }
+
+#slotName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem; font-weight: 700; color: var(--gold);
+  padding: 0 8px; text-align: center;
+  transition: opacity 0.06s ease;
+}
+
+/* ── Phase 3: Revealed + Topics ── */
+.revealed-card {
+  width: 100%; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 14px;
+  padding: 28px 28px 24px; position: relative; overflow: hidden;
+}
+.revealed-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--blue) 70%, transparent);
+}
+.rev-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.rev-left { flex: 1; min-width: 0; }
+.rev-tag {
+  font-size: 0.68rem; color: var(--text-dim);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px;
+}
+.rev-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem; font-weight: 700; line-height: 1.2;
+  color: var(--text);
+  animation: lockIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes lockIn {
+  from { transform: scale(1.08); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.rev-code { font-size: 0.73rem; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.05em; }
+.rev-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.brand-rank-badge {
+  background: rgba(77,159,255,0.1);
+  border: 1px solid rgba(77,159,255,0.3);
+  color: var(--blue);
+  font-size: 0.72rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 4px;
+  letter-spacing: 0.06em;
+}
+.brand-name-big {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--blue); text-align: right;
+  animation: lockIn 0.55s 0.1s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+/* Topics */
+.topics-label {
+  font-size: 0.75rem; color: var(--text-dim);
+  text-align: center; letter-spacing: 0.06em;
+}
+.topics-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; width: 100%;
+}
+.topic-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 20px 18px;
+  cursor: pointer; transition: all 0.2s ease;
+  text-align: left; display: flex;
+  flex-direction: column; gap: 7px;
+  position: relative; overflow: hidden;
+}
+.topic-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 10% 10%, var(--tc-glow), transparent 60%);
+  opacity: 0; transition: opacity 0.25s;
+}
+.topic-card:hover {
+  border-color: var(--tc-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.topic-card:hover::after { opacity: 1; }
+.topic-num {
+  font-size: 0.67rem; color: var(--tc-color);
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.topic-icon { font-size: 1.4rem; line-height: 1; }
+.topic-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--text); line-height: 1.25;
+}
+
+/* ── Phase 4: Question ── */
+.context-bar {
+  width: 100%;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.ctx-pill {
+  padding: 5px 13px; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 500;
+  border: 1px solid var(--border2);
+  background: var(--surface2); color: var(--text-mid);
+}
+.ctx-pill.brand  { border-color: rgba(77,159,255,0.4);   color: var(--blue);   background: rgba(77,159,255,0.08); }
+.ctx-pill.topic  { border-color: rgba(82,212,138,0.4);   color: var(--green);  background: rgba(82,212,138,0.08); }
+
+.question-card {
+  width: 100%; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 14px;
+  padding: 32px; position: relative; overflow: hidden;
+  min-height: 160px;
+}
+.question-card::after {
+  content: '?';
+  position: absolute; bottom: -8px; right: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 7rem; font-weight: 900; line-height: 1;
+  color: rgba(232,184,75,0.05); pointer-events: none;
+  user-select: none;
+}
+.q-label {
+  font-size: 0.68rem; color: var(--gold);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.q-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--gold); }
+
+.q-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.18rem; font-weight: 700; line-height: 1.65;
+  color: var(--text); font-style: italic;
+  position: relative; z-index: 1;
+}
+
+/* Loading dots */
+.ldots { display: flex; align-items: center; gap: 7px; padding: 20px 0; }
+.ldot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--gold);
+  animation: ldot 1.3s ease-in-out infinite;
+}
+.ldot:nth-child(2) { animation-delay: 0.18s; }
+.ldot:nth-child(3) { animation-delay: 0.36s; }
+@keyframes ldot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30%           { transform: translateY(-10px); opacity: 1; }
+}
+
+/* Cursor blink */
+.cursor-blink {
+  display: inline-block;
+  width: 2px; height: 1.05em;
+  background: var(--gold);
+  margin-left: 3px; vertical-align: text-bottom;
+  animation: cblink 0.75s ease infinite;
+}
+@keyframes cblink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* Reset / secondary buttons */
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.83rem; font-weight: 500;
+  padding: 10px 28px; border-radius: 6px;
+  cursor: pointer; transition: all 0.2s ease;
+  letter-spacing: 0.04em;
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.22);
+  color: var(--text);
+  background: var(--surface2);
+}
+
+/* Flash overlay */
+.flash-overlay {
+  position: fixed; inset: 0;
+  background: rgba(232,184,75,0.08);
+  pointer-events: none;
+  animation: flashAnim 0.6s ease-out forwards;
+  z-index: 300;
+}
+@keyframes flashAnim {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Shimmer placeholder */
+.shimmer-line {
+  height: 18px; border-radius: 4px; margin-bottom: 10px;
+  background: linear-gradient(90deg, var(--surface) 25%, rgba(255,255,255,0.05) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+.shimmer-line:last-child { width: 65%; }
+
+/* Util */
+.sep { width: 100%; height: 1px; background: var(--border); }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+
+<header>
+  <div class="hdr-left">
+    <div class="hdr-title">Marketing Internacional — EPG UNASAM</div>
+    <div class="hdr-sub">Evaluación Oral · Ciclo 2026-I</div>
+  </div>
+  <div class="badge">Interbrand Best Global Brands 2025</div>
+</header>
+
+<div class="main">
+
+  <!-- ───── PHASE 1: Inicio ───── -->
+  <div class="phase active" id="phase1">
+    <div class="hero-eyebrow">Participación oral aleatoria</div>
+    <h1 class="hero-title">
+      Elige un<br>
+      <span class="accent">estudiante</span>
+    </h1>
+    <p class="hero-desc">
+      El profesor presiona el botón. El estudiante elegido
+      selecciona su tema y recibe una pregunta generada por IA.
+    </p>
+    <div class="cta-wrap">
+      <button class="cta-btn" id="btnElegir" onclick="iniciarSorteo()">
+        ✦ &nbsp;Elegir Estudiante
+      </button>
+      <div class="cta-ring"></div>
+    </div>
+
+    <div class="brand-preview">
+      <div class="bp-title">Asignación de marcas (fragmento)</div>
+      <div class="bp-row"><span class="bp-num">4</span><span class="bp-brand">Google</span><span class="bp-student">Chavez Huerta K.</span></div>
+      <div class="bp-row"><span class="bp-num">7</span><span class="bp-brand">Coca-Cola</span><span class="bp-student">Espinoza Solorzano M.</span></div>
+      <div class="bp-row"><span class="bp-num">15</span><span class="bp-brand">NVIDIA</span><span class="bp-student">Lazaro Ramos K.</span></div>
+      <div class="bp-row"><span class="bp-num">25</span><span class="bp-brand">Tesla</span><span class="bp-student">Rodriguez Salazar V.</span></div>
+      <div class="bp-row" style="opacity:.45; font-style:italic"><span class="bp-num">…</span><span class="bp-brand">32 estudiantes en total</span></div>
+    </div>
+  </div>
+
+  <!-- ───── PHASE 2: Animación sorteo ───── -->
+  <div class="phase" id="phase2">
+    <div class="slot-shell">
+      <div class="slot-label">Seleccionando estudiante…</div>
+      <div class="slot-window">
+        <div id="slotName">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ───── PHASE 3: Revelado + Temas ───── -->
+  <div class="phase" id="phase3">
+    <div class="revealed-card" id="revealedCard">
+      <div class="rev-row">
+        <div class="rev-left">
+          <div class="rev-tag">Estudiante seleccionado</div>
+          <div class="rev-name" id="revName">—</div>
+          <div class="rev-code" id="revCode">—</div>
+        </div>
+        <div class="rev-right">
+          <div class="brand-rank-badge" id="revRank">#1</div>
+          <div class="brand-name-big" id="revBrand">Apple</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topics-label">
+      El estudiante elige el tema de su pregunta:
+    </div>
+
+    <div class="topics-grid" id="topicsGrid"></div>
+  </div>
+
+  <!-- ───── PHASE 4: Pregunta ───── -->
+  <div class="phase" id="phase4">
+    <div class="context-bar" id="contextBar">
+      <!-- Pills added by JS -->
+    </div>
+
+    <div class="question-card">
+      <div class="q-label">Pregunta Oral</div>
+      <div id="questionContent">
+        <div class="ldots">
+          <div class="ldot"></div><div class="ldot"></div><div class="ldot"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-secondary" onclick="resetTodo()">↺ &nbsp;Nueva ronda</button>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+/* =========================================================
+   DATOS
+   ========================================================= */
+const estudiantes = [
+  { n:1,  cod:"211.1306.002", nombre:"Agreda Olaya Israel Mauricio",          marca:"Apple",         rk:1  },
+  { n:2,  cod:"211.1306.006", nombre:"Aquiño Rodriguez Karla Celeste",         marca:"Microsoft",     rk:2  },
+  { n:3,  cod:"211.1306.007", nombre:"Bazan Villacorta Yamile Itzael",         marca:"Amazon",        rk:3  },
+  { n:4,  cod:"211.1306.093", nombre:"Chavez Huerta Ketty Iris",               marca:"Google",        rk:4  },
+  { n:5,  cod:"211.1306.078", nombre:"Chávez Lázaro Cris Mayrin Araceli",      marca:"Samsung",       rk:5  },
+  { n:6,  cod:"211.1306.013", nombre:"Diestra Valverde Nick Roberth",          marca:"Toyota",        rk:6  },
+  { n:7,  cod:"211.1306.080", nombre:"Espinoza Solorzano Marely Yesenia",      marca:"Coca-Cola",     rk:7  },
+  { n:8,  cod:"211.1306.015", nombre:"Espiritu Perez Johan Victor",            marca:"Instagram",     rk:8  },
+  { n:9,  cod:"211.1306.021", nombre:"Gabriel Paredes Nayeli Milagros",        marca:"McDonald's",    rk:9  },
+  { n:10, cod:"211.1306.022", nombre:"Gargate Tarazona Edward Lucio",          marca:"Mercedes-Benz", rk:10 },
+  { n:11, cod:"211.1306.082", nombre:"Gonzales Guimaray Geraldine Brigith",    marca:"Cisco",         rk:11 },
+  { n:12, cod:"211.1306.025", nombre:"Guillén Lázaro Florián Antonio",         marca:"Louis Vuitton", rk:12 },
+  { n:13, cod:"211.1306.027", nombre:"Hidalgo Trujillo Georgina Victoria",     marca:"YouTube",       rk:13 },
+  { n:14, cod:"211.1306.074", nombre:"Jamanca Romero Isabel Yuliana",          marca:"BMW",           rk:14 },
+  { n:15, cod:"171.1306.012", nombre:"Lazaro Ramos Kevin Leonel",              marca:"NVIDIA",        rk:15 },
+  { n:16, cod:"211.1306.034", nombre:"Loarte Salinas Cristina Yaret",          marca:"Oracle",        rk:16 },
+  { n:17, cod:"211.1306.039", nombre:"Mendez Cocha Gabriela Marina",           marca:"Disney",        rk:17 },
+  { n:18, cod:"211.1306.084", nombre:"Minaya Rupay Fernando Rafael",           marca:"SAP",           rk:18 },
+  { n:19, cod:"211.1306.076", nombre:"Norabuena Segura Jorge Hugo",            marca:"Facebook",      rk:19 },
+  { n:20, cod:"211.1306.043", nombre:"Osorio Saenz Deyvi Tony",               marca:"Adobe",         rk:20 },
+  { n:21, cod:"211.1306.044", nombre:"Pacheco Valderrama Franco Francisco",    marca:"Hermès",        rk:21 },
+  { n:22, cod:"211.1306.085", nombre:"Pajuelo Rodriguez Lesli Diana",          marca:"IBM",           rk:22 },
+  { n:23, cod:"211.1306.047", nombre:"Pineda Garay Yesmin Isabel",             marca:"Nike",          rk:23 },
+  { n:24, cod:"211.1306.049", nombre:"Ramos Nieto Maicol Sotil",              marca:"Chanel",        rk:24 },
+  { n:25, cod:"171.1306.055", nombre:"Rodriguez Salazar Victor Esel",          marca:"Tesla",         rk:25 },
+  { n:26, cod:"191.1306.027", nombre:"Rojas Quito Angie Nicoll",               marca:"J.P. Morgan",   rk:26 },
+  { n:27, cod:"211.1306.088", nombre:"Salazar Sáenz María Fernanda",           marca:"Allianz",       rk:27 },
+  { n:28, cod:"211.1306.059", nombre:"Sigueñas Valdiviano Manuela Angelica",   marca:"Netflix",       rk:28 },
+  { n:29, cod:"211.1306.061", nombre:"Tarazona Huayaney Judith Angela",        marca:"Honda",         rk:29 },
+  { n:30, cod:"211.1306.091", nombre:"Trujillo Martinez Nayely Mariadafre",    marca:"Hyundai",       rk:30 },
+  { n:31, cod:"211.1306.066", nombre:"Vásquez Sinti Yeraldin Zamira",          marca:"BlackRock",     rk:31 },
+  { n:32, cod:"211.1306.072", nombre:"Vizcarra Nava Francesco Rivelino",       marca:"Booking.com",   rk:32 },
+];
+
+const temas = [
+  { id:1, nombre:"Valor de marca",          icono:"💎", color:"#e8b84b", glow:"rgba(232,184,75,0.12)"  },
+  { id:2, nombre:"Presencia global",        icono:"🌍", color:"#4d9fff", glow:"rgba(77,159,255,0.12)"  },
+  { id:3, nombre:"Estrategia de marca",     icono:"🎯", color:"#52d48a", glow:"rgba(82,212,138,0.12)"  },
+  { id:4, nombre:"Productos emblemáticos",  icono:"⭐", color:"#a87fff", glow:"rgba(168,127,255,0.12)" },
+];
+
+/* =========================================================
+   RENDER TOPIC CARDS
+   ========================================================= */
+const grid = document.getElementById('topicsGrid');
+temas.forEach(t => {
+  const c = document.createElement('div');
+  c.className = 'topic-card';
+  c.style.cssText = `--tc-color:${t.color}; --tc-glow:${t.glow}`;
+  c.innerHTML = `
+    <div class="topic-num">Tema ${t.id}</div>
+    <div class="topic-icon">${t.icono}</div>
+    <div class="topic-title">${t.nombre}</div>
+  `;
+  c.onclick = () => elegirTema(t);
+  grid.appendChild(c);
+});
+
+/* =========================================================
+   STATE
+   ========================================================= */
+let estudianteActual = null;
+
+/* =========================================================
+   PHASE NAVIGATION
+   ========================================================= */
+function mostrarFase(id) {
+  document.querySelectorAll('.phase').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+/* =========================================================
+   FASE 1 → 2: Sorteo
+   ========================================================= */
+function iniciarSorteo() {
+  mostrarFase('phase2');
+
+  const finalIdx = Math.floor(Math.random() * estudiantes.length);
+  estudianteActual = estudiantes[finalIdx];
+
+  const el = document.getElementById('slotName');
+  let iter = 0;
+  const total = 28;
+  const breakAt = total - 8; // last 8 slow down
+
+  function spin() {
+    const rnd = estudiantes[Math.floor(Math.random() * estudiantes.length)];
+    el.textContent = rnd.nombre;
+    iter++;
+
+    if (iter < total) {
+      const delay = iter < breakAt ? 65 : 65 + (iter - breakAt) * 32;
+      setTimeout(spin, delay);
+    } else {
+      el.textContent = estudianteActual.nombre;
+      // Flash
+      const flash = document.createElement('div');
+      flash.className = 'flash-overlay';
+      document.body.appendChild(flash);
+      setTimeout(() => flash.remove(), 700);
+      // Reveal
+      setTimeout(revelarEstudiante, 550);
+    }
+  }
+  spin();
+}
+
+/* =========================================================
+   FASE 2 → 3: Revelar estudiante
+   ========================================================= */
+function revelarEstudiante() {
+  const e = estudianteActual;
+  document.getElementById('revName').textContent = e.nombre;
+  document.getElementById('revCode').textContent = `${e.cod} · Nº ${e.n}`;
+  document.getElementById('revRank').textContent = `#${e.rk}`;
+  document.getElementById('revBrand').textContent = e.marca;
+  mostrarFase('phase3');
+}
+
+/* =========================================================
+   FASE 3 → 4: Elegir tema
+   ========================================================= */
+function elegirTema(tema) {
+  const e = estudianteActual;
+
+  // Context bar
+  const bar = document.getElementById('contextBar');
+  bar.innerHTML = `
+    <span class="ctx-pill">Nº ${e.n} · ${e.cod}</span>
+    <span class="ctx-pill brand">${e.marca} (Rank #${e.rk})</span>
+    <span class="ctx-pill topic">${tema.icono} ${tema.nombre}</span>
+  `;
+
+  mostrarFase('phase4');
+  generarPregunta(e.marca, tema);
+}
+
+/* =========================================================
+   API: Generar pregunta con Claude
+   ========================================================= */
+async function generarPregunta(marca, tema) {
+  const el = document.getElementById('questionContent');
+  el.innerHTML = `<div class="ldots"><div class="ldot"></div><div class="ldot"></div><div class="ldot"></div></div>`;
+
+  const prompt = `Eres profesor de Marketing Internacional de nivel universitario (posgrado) en una universidad pública peruana.
+
+Tu tarea: genera UNA sola pregunta de evaluación oral en español.
+
+Marca asignada: ${marca} (ranking Interbrand Best Global Brands 2025)
+Tema del eje: ${tema.nombre}
+
+Criterios para la pregunta:
+- Debe ser específica para ${marca}, no genérica
+- Debe aludir a datos, estrategias, campañas o hechos concretos de 2024-2025
+- Debe exigir análisis crítico, no solo definición
+- Nivel adecuado para estudiante de Marketing Internacional en posgrado
+- Redactada de forma directa, sin preámbulo
+
+Devuelve ÚNICAMENTE la pregunta. Sin numeración, sin comillas, sin explicación adicional.`;
+
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 350,
+        messages: [{ role: "user", content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    const texto = (data.content[0].text || "").trim();
+
+    // Typewriter effect
+    el.innerHTML = `<div class="q-text" id="qTyped"></div>`;
+    const target = document.getElementById('qTyped');
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor-blink';
+    target.appendChild(cursor);
+
+    let i = 0;
+    function typeChar() {
+      if (i < texto.length) {
+        target.insertBefore(document.createTextNode(texto[i]), cursor);
+        i++;
+        setTimeout(typeChar, texto.length < 120 ? 22 : 15);
+      } else {
+        setTimeout(() => cursor.remove(), 1800);
+      }
+    }
+    typeChar();
+
+  } catch (err) {
+    el.innerHTML = `<div class="q-text" style="color:var(--text-dim)">
+      Error al generar la pregunta. Verifica la conexión e inténtalo de nuevo.
+    </div>`;
+    console.error(err);
+  }
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+function resetTodo() {
+  estudianteActual = null;
+  document.getElementById('questionContent').innerHTML = '';
+  document.getElementById('contextBar').innerHTML = '';
+  mostrarFase('phase1');
+}
+</script>
+</body>
+</html>
