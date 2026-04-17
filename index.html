@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
 :root {
   --bg: #070b17;
   --surface: rgba(255,255,255,0.035);
@@ -24,9 +25,9 @@
   --text-dim: rgba(221,216,204,0.45);
   --text-mid: rgba(221,216,204,0.7);
 }
-
+ 
 html { font-size: 16px; }
-
+ 
 body {
   background: var(--bg);
   color: var(--text);
@@ -38,7 +39,7 @@ body {
   justify-content: flex-start;
   overflow-x: hidden;
 }
-
+ 
 /* ── Background atmosphere ── */
 .bg-grid {
   position: fixed; inset: 0; pointer-events: none;
@@ -60,7 +61,7 @@ body {
   background: radial-gradient(circle, rgba(232,184,75,0.06) 0%, transparent 65%);
   bottom: -200px; left: -200px;
 }
-
+ 
 /* ── Header ── */
 header {
   position: sticky; top: 0; left: 0; right: 0; width: 100%;
@@ -88,7 +89,7 @@ header {
   padding: 4px 12px; border-radius: 100px;
   letter-spacing: 0.04em;
 }
-
+ 
 /* ── Main wrapper ── */
 .main {
   width: 100%; max-width: 660px;
@@ -97,7 +98,7 @@ header {
   align-items: center; gap: 28px;
   position: relative; z-index: 10;
 }
-
+ 
 /* ── Phase system ── */
 .phase { display: none; width: 100%; flex-direction: column; align-items: center; gap: 24px; }
 .phase.active { display: flex; animation: phaseIn 0.45s cubic-bezier(0.22,1,0.36,1); }
@@ -105,7 +106,7 @@ header {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
+ 
 /* ── Phase 1: Welcome ── */
 .hero-eyebrow {
   font-size: 0.72rem; color: var(--text-dim);
@@ -127,7 +128,7 @@ header {
   font-size: 0.88rem; color: var(--text-dim);
   text-align: center; max-width: 360px; line-height: 1.6;
 }
-
+ 
 /* Big CTA button */
 .cta-wrap { position: relative; margin-top: 8px; }
 .cta-btn {
@@ -159,7 +160,7 @@ header {
   0%, 100% { opacity: 0.35; transform: scale(1); }
   50%       { opacity: 0.8;  transform: scale(1.025); }
 }
-
+ 
 /* Brand index preview */
 .brand-preview {
   margin-top: 8px; width: 100%;
@@ -175,7 +176,7 @@ header {
 .bp-num { color: var(--gold); font-weight: 600; font-size: 0.72rem; width: 22px; text-align: right; }
 .bp-brand { color: var(--text-mid); flex: 1; }
 .bp-student { color: var(--text-dim); font-size: 0.72rem; text-align: right; }
-
+ 
 /* ── Phase 2: Slot machine ── */
 .slot-shell {
   width: 100%; background: var(--surface);
@@ -210,14 +211,14 @@ header {
 }
 .slot-window::before { top: 0; background: linear-gradient(to bottom, var(--bg), transparent); }
 .slot-window::after  { bottom: 0; background: linear-gradient(to top, var(--bg), transparent); }
-
+ 
 #slotName {
   font-family: 'Playfair Display', serif;
   font-size: 1.45rem; font-weight: 700; color: var(--gold);
   padding: 0 8px; text-align: center;
   transition: opacity 0.06s ease;
 }
-
+ 
 /* ── Phase 3: Revealed + Topics ── */
 .revealed-card {
   width: 100%; background: var(--surface);
@@ -261,7 +262,7 @@ header {
   color: var(--blue); text-align: right;
   animation: lockIn 0.55s 0.1s cubic-bezier(0.34,1.56,0.64,1) both;
 }
-
+ 
 /* Topics */
 .topics-label {
   font-size: 0.75rem; color: var(--text-dim);
@@ -317,7 +318,7 @@ header {
   font-size: 0.95rem; font-weight: 700;
   color: var(--text); line-height: 1.25;
 }
-
+ 
 /* ── Phase 4: Question ── */
 .context-bar {
   width: 100%;
@@ -331,7 +332,7 @@ header {
 }
 .ctx-pill.brand  { border-color: rgba(77,159,255,0.4);   color: var(--blue);   background: rgba(77,159,255,0.08); }
 .ctx-pill.topic  { border-color: rgba(82,212,138,0.4);   color: var(--green);  background: rgba(82,212,138,0.08); }
-
+ 
 .question-card {
   width: 100%; background: var(--surface);
   border: 1px solid var(--border); border-radius: 14px;
@@ -353,14 +354,14 @@ header {
   display: flex; align-items: center; gap: 10px;
 }
 .q-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--gold); }
-
+ 
 .q-text {
   font-family: 'Playfair Display', serif;
   font-size: 1.18rem; font-weight: 700; line-height: 1.65;
   color: var(--text); font-style: italic;
   position: relative; z-index: 1;
 }
-
+ 
 /* Loading dots */
 .ldots { display: flex; align-items: center; gap: 7px; padding: 20px 0; }
 .ldot {
@@ -374,7 +375,7 @@ header {
   0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
   30%           { transform: translateY(-10px); opacity: 1; }
 }
-
+ 
 /* Cursor blink */
 .cursor-blink {
   display: inline-block;
@@ -384,7 +385,7 @@ header {
   animation: cblink 0.75s ease infinite;
 }
 @keyframes cblink { 0%,100%{opacity:1} 50%{opacity:0} }
-
+ 
 /* Reset / secondary buttons */
 .btn-secondary {
   background: transparent;
@@ -401,7 +402,7 @@ header {
   color: var(--text);
   background: var(--surface2);
 }
-
+ 
 /* Flash overlay */
 .flash-overlay {
   position: fixed; inset: 0;
@@ -414,7 +415,7 @@ header {
   0%   { opacity: 1; }
   100% { opacity: 0; }
 }
-
+ 
 /* Shimmer placeholder */
 .shimmer-line {
   height: 18px; border-radius: 4px; margin-bottom: 10px;
@@ -424,17 +425,17 @@ header {
 }
 @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
 .shimmer-line:last-child { width: 65%; }
-
+ 
 /* Util */
 .sep { width: 100%; height: 1px; background: var(--border); }
 </style>
 </head>
 <body>
-
+ 
 <div class="bg-grid"></div>
 <div class="bg-orb bg-orb-1"></div>
 <div class="bg-orb bg-orb-2"></div>
-
+ 
 <header>
   <div class="hdr-left">
     <div class="hdr-title">Marketing Internacional — EPG UNASAM</div>
@@ -461,9 +462,9 @@ header {
     </button>
   </div>
 </header>
-
+ 
 <div class="main">
-
+ 
   <!-- ───── PHASE 1: Inicio ───── -->
   <div class="phase active" id="phase1">
     <div class="hero-eyebrow">Participación oral aleatoria</div>
@@ -481,7 +482,7 @@ header {
       </button>
       <div class="cta-ring"></div>
     </div>
-
+ 
     <div class="brand-preview">
       <div class="bp-title">Asignación de marcas (fragmento)</div>
       <div class="bp-row"><span class="bp-num">4</span><span class="bp-brand">Google</span><span class="bp-student">Chavez Huerta K.</span></div>
@@ -491,7 +492,7 @@ header {
       <div class="bp-row" style="opacity:.45; font-style:italic"><span class="bp-num">…</span><span class="bp-brand">32 estudiantes en total</span></div>
     </div>
   </div>
-
+ 
   <!-- ───── PHASE 2: Animación sorteo ───── -->
   <div class="phase" id="phase2">
     <div class="slot-shell">
@@ -501,7 +502,7 @@ header {
       </div>
     </div>
   </div>
-
+ 
   <!-- ───── PHASE 3: Revelado + Temas ───── -->
   <div class="phase" id="phase3">
     <div class="revealed-card" id="revealedCard">
@@ -517,41 +518,29 @@ header {
         </div>
       </div>
     </div>
-
+ 
     <div class="topics-label">
       Se muestran los 4 temas posibles — el estudiante presiona para sortear:
     </div>
-
+ 
     <div class="topics-grid" id="topicsGrid"></div>
-
+ 
     <div class="cta-wrap" style="margin-top:4px;">
       <button class="cta-btn" id="btnTema" onclick="sortearTema()" style="font-size:1.05rem;padding:17px 48px;">
         🎲 &nbsp;Elegir al azar
       </button>
       <div class="cta-ring"></div>
     </div>
+ 
+    <button class="btn-secondary" id="btnSiguiente" onclick="resetTodo()" style="display:none;">
+      → &nbsp;Siguiente estudiante
+    </button>
   </div>
-
-  <!-- ───── PHASE 4: Pregunta ───── -->
-  <div class="phase" id="phase4">
-    <div class="context-bar" id="contextBar">
-      <!-- Pills added by JS -->
-    </div>
-
-    <div class="question-card">
-      <div class="q-label">Pregunta Oral</div>
-      <div id="questionContent">
-        <div class="ldots">
-          <div class="ldot"></div><div class="ldot"></div><div class="ldot"></div>
-        </div>
-      </div>
-    </div>
-
-    <button class="btn-secondary" onclick="resetTodo()">→ &nbsp;Siguiente estudiante</button>
+ 
   </div>
-
+ 
 </div><!-- /main -->
-
+ 
 <script>
 /* =========================================================
    DATOS
@@ -590,14 +579,14 @@ const estudiantes = [
   { n:31, cod:"211.1306.066", nombre:"Vásquez Sinti Yeraldin Zamira",          marca:"BlackRock",     rk:31 },
   { n:32, cod:"211.1306.072", nombre:"Vizcarra Nava Francesco Rivelino",       marca:"Booking.com",   rk:32 },
 ];
-
+ 
 const temas = [
   { id:1, nombre:"Valor de marca",          icono:"💎", color:"#e8b84b", glow:"rgba(232,184,75,0.12)"  },
   { id:2, nombre:"Presencia global",        icono:"🌍", color:"#4d9fff", glow:"rgba(77,159,255,0.12)"  },
   { id:3, nombre:"Estrategia de marca",     icono:"🎯", color:"#52d48a", glow:"rgba(82,212,138,0.12)"  },
   { id:4, nombre:"Productos emblemáticos",  icono:"⭐", color:"#a87fff", glow:"rgba(168,127,255,0.12)" },
 ];
-
+ 
 /* =========================================================
    RENDER TOPIC CARDS
    ========================================================= */
@@ -614,12 +603,12 @@ temas.forEach(t => {
   // No onclick — selection is random via button
   grid.appendChild(c);
 });
-
+ 
 /* =========================================================
    STATE
    ========================================================= */
 let estudianteActual = null;
-
+ 
 /* =========================================================
    PHASE NAVIGATION
    ========================================================= */
@@ -627,26 +616,26 @@ function mostrarFase(id) {
   document.querySelectorAll('.phase').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
-
+ 
 /* =========================================================
    FASE 1 → 2: Sorteo
    ========================================================= */
 function iniciarSorteo() {
   mostrarFase('phase2');
-
+ 
   const finalIdx = Math.floor(Math.random() * estudiantes.length);
   estudianteActual = estudiantes[finalIdx];
-
+ 
   const el = document.getElementById('slotName');
   let iter = 0;
   const total = 28;
   const breakAt = total - 8; // last 8 slow down
-
+ 
   function spin() {
     const rnd = estudiantes[Math.floor(Math.random() * estudiantes.length)];
     el.textContent = rnd.nombre;
     iter++;
-
+ 
     if (iter < total) {
       const delay = iter < breakAt ? 65 : 65 + (iter - breakAt) * 32;
       setTimeout(spin, delay);
@@ -663,7 +652,7 @@ function iniciarSorteo() {
   }
   spin();
 }
-
+ 
 /* =========================================================
    FASE 2 → 3: Revelar estudiante
    ========================================================= */
@@ -675,7 +664,7 @@ function revelarEstudiante() {
   document.getElementById('revBrand').textContent = e.marca;
   mostrarFase('phase3');
 }
-
+ 
 /* =========================================================
    FASE 3: Sortear tema al azar (animación de ruleta)
    ========================================================= */
@@ -684,27 +673,27 @@ function sortearTema() {
   btn.disabled = true;
   btn.style.opacity = '0.5';
   btn.style.cursor = 'default';
-
+ 
   const cards = document.querySelectorAll('#topicsGrid .topic-card');
   const ganadorIdx = Math.floor(Math.random() * temas.length);
   const temaGanador = temas[ganadorIdx];
-
+ 
   let iter = 0;
   const total = 24;
   const breakAt = total - 6;
   let currentHighlight = -1;
-
+ 
   function cycleHighlight() {
     // Remove highlight from previous
     if (currentHighlight >= 0) cards[currentHighlight].classList.remove('highlight');
-
+ 
     // Pick next (avoid repeating same card too many times but allow it)
     let next;
     do { next = Math.floor(Math.random() * 4); } while (next === currentHighlight && iter < total - 1);
     currentHighlight = next;
     cards[currentHighlight].classList.add('highlight');
     iter++;
-
+ 
     if (iter < total) {
       const delay = iter < breakAt ? 80 : 80 + (iter - breakAt) * 55;
       setTimeout(cycleHighlight, delay);
@@ -716,7 +705,7 @@ function sortearTema() {
   }
   cycleHighlight();
 }
-
+ 
 function revealWinner(idx, tema) {
   const cards = document.querySelectorAll('#topicsGrid .topic-card');
   // Flash all
@@ -724,100 +713,23 @@ function revealWinner(idx, tema) {
   flash.className = 'flash-overlay';
   document.body.appendChild(flash);
   setTimeout(() => flash.remove(), 600);
-
+ 
   // Apply winner / loser classes
   cards.forEach((c, i) => {
     c.classList.remove('highlight');
     if (i === idx) c.classList.add('winner');
     else           c.classList.add('loser');
   });
-
-  // Proceed to question after short pause
-  setTimeout(() => elegirTema(tema), 900);
+ 
+  // Proceed: hide sortear button, show siguiente
+  setTimeout(() => {
+    document.getElementById('btnTema').closest('.cta-wrap').style.display = 'none';
+    const sig = document.getElementById('btnSiguiente');
+    sig.style.display = 'inline-block';
+    sig.style.animation = 'phaseIn 0.4s ease';
+  }, 900);
 }
-
-/* =========================================================
-   FASE 3 → 4: Elegir tema (llamada internamente por revealWinner)
-   ========================================================= */
-function elegirTema(tema) {
-  const e = estudianteActual;
-
-  // Context bar
-  const bar = document.getElementById('contextBar');
-  bar.innerHTML = `
-    <span class="ctx-pill">Nº ${e.n} · ${e.cod}</span>
-    <span class="ctx-pill brand">${e.marca} (Rank #${e.rk})</span>
-    <span class="ctx-pill topic">${tema.icono} ${tema.nombre}</span>
-  `;
-
-  mostrarFase('phase4');
-  generarPregunta(e.marca, tema);
-}
-
-/* =========================================================
-   API: Generar pregunta con Claude
-   ========================================================= */
-async function generarPregunta(marca, tema) {
-  const el = document.getElementById('questionContent');
-  el.innerHTML = `<div class="ldots"><div class="ldot"></div><div class="ldot"></div><div class="ldot"></div></div>`;
-
-  const prompt = `Eres profesor de Marketing Internacional de nivel universitario (posgrado) en una universidad pública peruana.
-
-Tu tarea: genera UNA sola pregunta de evaluación oral en español.
-
-Marca asignada: ${marca} (ranking Interbrand Best Global Brands 2025)
-Tema del eje: ${tema.nombre}
-
-Criterios para la pregunta:
-- Debe ser específica para ${marca}, no genérica
-- Debe aludir a datos, estrategias, campañas o hechos concretos de 2024-2025
-- Debe exigir análisis crítico, no solo definición
-- Nivel adecuado para estudiante de Marketing Internacional en posgrado
-- Redactada de forma directa, sin preámbulo
-
-Devuelve ÚNICAMENTE la pregunta. Sin numeración, sin comillas, sin explicación adicional.`;
-
-  try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 350,
-        messages: [{ role: "user", content: prompt }]
-      })
-    });
-
-    const data = await res.json();
-    const texto = (data.content[0].text || "").trim();
-
-    // Typewriter effect
-    el.innerHTML = `<div class="q-text" id="qTyped"></div>`;
-    const target = document.getElementById('qTyped');
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor-blink';
-    target.appendChild(cursor);
-
-    let i = 0;
-    function typeChar() {
-      if (i < texto.length) {
-        target.insertBefore(document.createTextNode(texto[i]), cursor);
-        i++;
-        setTimeout(typeChar, texto.length < 120 ? 22 : 15);
-      } else {
-        setTimeout(() => cursor.remove(), 1800);
-      }
-    }
-    typeChar();
-
-  } catch (err) {
-    el.innerHTML = `<div class="q-text" style="color:var(--text-dim)">
-      Error al generar la pregunta. Verifica la conexión e inténtalo de nuevo.
-    </div>`;
-    console.error(err);
-  }
-}
-
+ 
 /* =========================================================
    FULLSCREEN
    ========================================================= */
@@ -841,21 +753,24 @@ document.addEventListener('fullscreenchange', () => {
       <polyline points="13,9 13,13 9,13"/><polyline points="5,13 1,13 1,9"/>`;
   }
 });
-
+ 
 /* =========================================================
    RESET
    ========================================================= */
 function resetTodo() {
   estudianteActual = null;
-  document.getElementById('questionContent').innerHTML = '';
-  document.getElementById('contextBar').innerHTML = '';
-  // Reset topic cards
   document.querySelectorAll('#topicsGrid .topic-card').forEach(c => {
     c.classList.remove('winner','loser','highlight');
   });
-  // Re-enable random button
-  const btn = document.getElementById('btnTema');
-  if (btn) { btn.disabled = false; btn.style.opacity = '1'; btn.style.cursor = 'pointer'; }
+  const btnTema = document.getElementById('btnTema');
+  if (btnTema) {
+    btnTema.disabled = false;
+    btnTema.style.opacity = '1';
+    btnTema.style.cursor = 'pointer';
+    btnTema.closest('.cta-wrap').style.display = '';
+  }
+  const sig = document.getElementById('btnSiguiente');
+  if (sig) sig.style.display = 'none';
   mostrarFase('phase1');
 }
 </script>
